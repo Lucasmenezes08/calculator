@@ -5,7 +5,7 @@ import { Calculadora } from './components/calculadora'
 
 function App() {
     return (
-      <section>
+      <section className='w-full h-screen flex items-center justify-center bg-gray-950'>
          <Calculadora/>
       </section>
     )

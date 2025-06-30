@@ -92,12 +92,6 @@ export function Calculadora (){
     }
     }
 
-
-    function visualizarDigito (event){
-        setEstado(event.target.value)
-    }
-
-
     function reset (){
         setEstado({
             ...estado,
@@ -110,27 +104,32 @@ export function Calculadora (){
 
 
     return (
-        <section>
+        <section className="w-[30%] h-[80vh] rounded-2xl bg-neutral-900 flex flex-col justify-center items-center">
             <Visor valor={estado.content}/>
 
-            <section>
-                <Teclas valor={'AC'} funcao={reset}></Teclas>
-                <Teclas valor={'7'} funcao={adicionarDigito}></Teclas>
-                <Teclas valor={'4'} funcao={adicionarDigito}></Teclas>
-                <Teclas valor={'1'} funcao={adicionarDigito}></Teclas>
-                <Teclas valor={'0'} funcao={adicionarDigito}></Teclas>
-                <Teclas valor={'8'} funcao={adicionarDigito}></Teclas>
-                <Teclas valor={'5'} funcao={adicionarDigito}></Teclas>
-                <Teclas valor={'2'} funcao={adicionarDigito}></Teclas>
-                <Teclas valor={'9'} funcao={adicionarDigito}></Teclas>
-                <Teclas valor={'6'} funcao={adicionarDigito}></Teclas>
-                <Teclas valor={'3'} funcao={adicionarDigito}></Teclas>
-                <Teclas valor={'÷'} funcao={operacao}></Teclas>
-                <Teclas valor={'x'} funcao={operacao}></Teclas>
-                <Teclas valor={'-'} funcao={operacao}></Teclas>
-                <Teclas valor={'+'} funcao={operacao}></Teclas>
-                <Teclas valor={'='} funcao={resultado}></Teclas>
-
+            <section className="h-[50vh] w-full grid grid-cols-4 gap-2 justify-center px-10 mt-[2rem]">
+                <Teclas valor={'AC'} funcao={reset} classe={'especial'}></Teclas>
+                <Teclas valor={'÷'} funcao={operacao} classe={'operador'}></Teclas>
+                <Teclas valor={'x'} funcao={operacao} classe={'operador'}></Teclas>
+                <Teclas valor={'-'} funcao={operacao} classe={'operador'}></Teclas>
+                <Teclas valor={'+'} funcao={operacao} classe={'operador'}></Teclas>
+                <Teclas valor={'='} funcao={resultado} classe={'operador'}></Teclas>
+                <Teclas valor={'9'} funcao={adicionarDigito} classe={'numero'}></Teclas>
+                <Teclas valor={'8'} funcao={adicionarDigito} classe={'numero'}></Teclas>
+                <Teclas valor={'7'} funcao={adicionarDigito} classe={'numero'}></Teclas>
+                <Teclas valor={'6'} funcao={adicionarDigito} classe={'numero'}></Teclas>
+                <Teclas valor={'5'} funcao={adicionarDigito} classe={'numero'}></Teclas>
+                <Teclas valor={'4'} funcao={adicionarDigito} classe={'numero'}></Teclas>
+                <Teclas valor={'3'} funcao={adicionarDigito} classe={'numero'}></Teclas>
+                <Teclas valor={'2'} funcao={adicionarDigito} classe={'numero'}></Teclas>
+                <Teclas valor={'1'} funcao={adicionarDigito} classe={'numero'}></Teclas>
+                <Teclas valor={'0'} funcao={adicionarDigito} classe={'numero'}></Teclas>
+              
+              
+                
+               
+               
+                
             </section>
         </section>
     )
